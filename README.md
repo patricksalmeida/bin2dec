@@ -4,7 +4,7 @@ This project it's a simple binary converter, in the main class BinaryConverter w
 #### Convert from binary to decimal
 ```java
   public static int fromBinary(String binaryRaw) {
-    if (Objects.isNull(binaryRaw) || binaryRaw.isBlank() || isInvalidBinary(binaryRaw)) {
+    if (isInvalidBinary(binaryRaw)) {
       throw new InvalidBinaryProvidedException("Invalid binary provided to convert");
     }
     
