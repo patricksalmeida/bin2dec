@@ -12,18 +12,18 @@ public class BinaryConverter {
 	private BinaryConverter() { }
 
 	public static int fromBinary(String binaryRaw) {
-		if (Objects.isNull(binaryRaw) || binaryRaw.isBlank() || isInvalidBinary(binaryRaw)) {
+		if (isInvalidBinary(binaryRaw)) {
 			throw new InvalidBinaryProvidedException("Invalid binary provided to convert");
 		}
 
 		return Integer.parseInt(binaryRaw, BASE_OF_BINARY_NUMBERS);
 	}
 
-	private static boolean isInvalidBinary(String binaryRaw) {
-		return !isValidBinary(binaryRaw);
+	public static boolean isInvalidBinary(String binaryRaw) {
+		return Objects.isNull(binaryRaw) || binaryRaw.isBlank() || !isValidBinary(binaryRaw);
 	}
 
-	private static boolean isValidBinary(String binaryRaw) {
+	public static boolean isValidBinary(String binaryRaw) {
 		return binaryRaw.matches("[0-1]+");
 	}
 
@@ -35,7 +35,7 @@ public class BinaryConverter {
 		return Integer.toBinaryString(randomNumber);
 	}
 
-	private static boolean isNegativeNumber(int number) {
+	public static boolean isNegativeNumber(int number) {
 		return number < 0;
 	}
 

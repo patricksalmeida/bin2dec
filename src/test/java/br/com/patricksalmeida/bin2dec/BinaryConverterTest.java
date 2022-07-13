@@ -20,6 +20,27 @@ class BinaryConverterTest {
 		assertEquals(255, result);
 	}
 
+	@Test
+	void shouldReturnTrueForValidBinaries() {
+		assertAll(
+				() -> assertTrue(BinaryConverter.isValidBinary("0")),
+				() -> assertTrue(BinaryConverter.isValidBinary("1")),
+				() -> assertTrue(BinaryConverter.isValidBinary("10")),
+				() -> assertTrue(BinaryConverter.isValidBinary("11"))
+		);
+	}
+
+	@Test
+	void shouldReturnTrueForInvalidBinaries() {
+		assertAll(
+				() -> assertTrue(BinaryConverter.isInvalidBinary(null)),
+				() -> assertTrue(BinaryConverter.isInvalidBinary("")),
+				() -> assertTrue(BinaryConverter.isInvalidBinary("ABC")),
+				() -> assertTrue(BinaryConverter.isInvalidBinary("123")),
+				() -> assertTrue(BinaryConverter.isInvalidBinary("-1"))
+		);
+	}
+
 	@Test()
 	void shouldThrowIfParamIsNull() {
 		verifyIfThrowsInvalidBinaryProvidedException(null);
