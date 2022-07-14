@@ -12,7 +12,7 @@ This project it's a simple binary converter, in the main class BinaryConverter w
   }
 ```
 
-#### Convert from decimal to Binary
+#### Convert from decimal to binary
 ```java
   public static String fromDecimal(int randomNumber) {
     if (isNegativeNumber(randomNumber)) {
