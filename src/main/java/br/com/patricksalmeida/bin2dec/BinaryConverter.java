@@ -11,12 +11,12 @@ public class BinaryConverter {
 
 	private BinaryConverter() { }
 
-	public static int fromBinary(String binaryRaw) {
-		if (isInvalidBinary(binaryRaw)) {
+	public static int fromBinary(String binary) {
+		if (isInvalidBinary(binary)) {
 			throw new InvalidBinaryProvidedException("Invalid binary provided to convert");
 		}
 
-		return Integer.parseInt(binaryRaw, BASE_OF_BINARY_NUMBERS);
+		return Integer.parseInt(binary, BASE_OF_BINARY_NUMBERS);
 	}
 
 	public static boolean isInvalidBinary(String binaryRaw) {
@@ -27,12 +27,12 @@ public class BinaryConverter {
 		return binaryRaw.matches("[0-1]+");
 	}
 
-	public static String fromDecimal(int randomNumber) {
-		if (isNegativeNumber(randomNumber)) {
+	public static String fromDecimal(int decimal) {
+		if (isNegativeNumber(decimal)) {
 			throw new InvalidDecimalProvidedException("Invalid decimal provided to convert");
 		}
 
-		return Integer.toBinaryString(randomNumber);
+		return Integer.toBinaryString(decimal);
 	}
 
 	public static boolean isNegativeNumber(int number) {

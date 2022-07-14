@@ -3,23 +3,23 @@ This project it's a simple binary converter, in the main class BinaryConverter w
 
 #### Convert from binary to decimal
 ```java
-  public static int fromBinary(String binaryRaw) {
-    if (isInvalidBinary(binaryRaw)) {
+  public static int fromBinary(String binary) {
+    if (isInvalidBinary(binary)) {
       throw new InvalidBinaryProvidedException("Invalid binary provided to convert");
     }
     
-    return Integer.parseInt(binaryRaw, BASE_OF_BINARY_NUMBERS);
+    return Integer.parseInt(binary, BASE_OF_BINARY_NUMBERS);
   }
 ```
 
 #### Convert from decimal to binary
 ```java
-  public static String fromDecimal(int randomNumber) {
-    if (isNegativeNumber(randomNumber)) {
+  public static String fromDecimal(int decimal) {
+    if (isNegativeNumber(decimal)) {
       throw new InvalidDecimalProvidedException("Invalid decimal provided to convert");
     }
     
-    return Integer.toBinaryString(randomNumber);
+    return Integer.toBinaryString(decimal);
   }
 ```
 
